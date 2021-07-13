@@ -1,0 +1,35 @@
+<h1>Tv Seasons</h1>
+<%= form_tag(root_path, :method => "get") do %>  
+  <div>  
+    <%= search_field_tag :search, params[:search], placeholder: "Search By Actor", class: "form-control" %>  
+    <div>  
+      <%= button_tag "Search",:name => nil%>  
+    </div>  
+  </div>  
+<% end %>
+
+<table>
+  
+    <th>Name</th>
+    <th>Genre</th>
+    <th>No of Seasons</th>
+    <th>Date of First Release</th>
+    <th>Shoot Location</th>
+    <th>Country</th>
+    <th>Rating</th>
+  
+  <% @tv_seasons.each do |season| %>
+  <tr>
+    <td><%= season.name %></td>
+    <td><%= season.genre.try(:name) %></td>
+    <td><%= season.no_seasons %></td>
+    <td><%= season.date_of_first_release %></td>
+    <td><%= season.shoot_location %></td>
+    <td><%= season.country %></td>
+    <td><%= season.reviews.average(:rating).to_f %></td>
+  </tr>
+<% end %>
+
+</table>
+
+<%= paginate @tv_seasons %>
