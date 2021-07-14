@@ -1,0 +1,38 @@
+<h1>@tv_season.name</h1>
+
+<h3>Details</h3>
+
+<table>
+  <th>Name</th>
+  <th>Genre</th>
+  <th>No of Seasons</th>
+  <th>Date of First Release</th>
+  <th>Shoot Location</th>
+  <th>Country</th>
+  <th>Rating</th>
+  
+  <tr>
+    <td><%= @tv_season.name %></td>
+    <td><%= @tv_season.genre.try(:name) %></td>
+    <td><%= @tv_season.no_seasons %></td>
+    <td><%= @tv_season.date_of_first_release %></td>
+    <td><%= @tv_season.shoot_location %></td>
+    <td><%= @tv_season.country %></td>
+    <td><%= @rating %></td>
+  </tr>
+
+</table>
+
+<h3>Cast</h3>
+  <table>
+    <th>Name</th>
+    <th>Role</th>
+    
+    <% @cast.each do |c| %>
+      <tr>
+        <td><%= c.person.name %></td>
+        <td><%= c.role.name %></td>
+      </tr>
+    <% end %>
+  </table>
+<%= link_to 'back', '/' %>

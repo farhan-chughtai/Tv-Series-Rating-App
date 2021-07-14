@@ -9,4 +9,11 @@ class TvSeasonsController < ApplicationController
     end
   end
 
+  def show
+    @tv_season = TvSeason.find(params[:id])
+    @genre = @tv_season.genre
+    @rating = @tv_season.reviews.average(:rating).to_f
+    @cast = @tv_season.tv_season_person.includes(:person)
+  end
+
 end

@@ -9,14 +9,14 @@
 <% end %>
 
 <table>
-  
-    <th>Name</th>
-    <th>Genre</th>
-    <th>No of Seasons</th>
-    <th>Date of First Release</th>
-    <th>Shoot Location</th>
-    <th>Country</th>
-    <th>Rating</th>
+  <th>Name</th>
+  <th>Genre</th>
+  <th>No of Seasons</th>
+  <th>Date of First Release</th>
+  <th>Shoot Location</th>
+  <th>Country</th>
+  <th>Rating</th>
+  <th></th>
   
   <% @tv_seasons.each do |season| %>
   <tr>
@@ -27,6 +27,7 @@
     <td><%= season.shoot_location %></td>
     <td><%= season.country %></td>
     <td><%= season.reviews.average(:rating).to_f %></td>
+    <td><%= link_to 'show', tv_season_path(season.id) %></td>
   </tr>
 <% end %>
 
