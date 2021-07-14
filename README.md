@@ -1,24 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+In order to import the reviews and tv_series from csv run the rake task 
 
-Things you may want to cover:
+1. rake db:seed => It will create the roles i.e. Actor and Director
+2. rake tv_series:import
+3. rake reviews:import
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Used Kaminari for pagination
+Unable to write the unit test cases. Time wraps up
