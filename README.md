@@ -6,6 +6,8 @@ Rails 6.1.4
 
 DB Postgres
 
+Preview: https://tv-series-rating-app.herokuapp.com/
+
 In order to import the reviews and tv_series from csv run the rake task 
 
 1. rake db:seed => It will create the roles i.e. Actor and Director
