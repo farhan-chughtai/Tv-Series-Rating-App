@@ -6,5 +6,6 @@ In order to import the reviews and tv_series from csv run the rake task
 2. rake tv_series:import
 3. rake reviews:import
 
-Used Kaminari for pagination
+Used Kaminari for pagination.
+
 Unable to write the unit test cases. Time wraps up
